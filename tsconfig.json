@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "noLib": false,
+        "removeComments": false,
+        "declaration": false,
+        "outDir": "dist"
+    },
+    "files": [
+        "src/Main.ts"
+    ]
+}

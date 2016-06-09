@@ -1,0 +1,36 @@
+{
+  "name": "ts-raycasting-example",
+  "version": "0.0.1",
+  "description": "Example of ts-raycasting library",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "lint": "tslint src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dderevjanik/ts-raycasting-example"
+  },
+  "keywords": [
+    "rays",
+    "raycast",
+    "raycasting",
+    "2.5d",
+    "pseudo2d"
+  ],
+  "author": {
+    "name": "Daniel Derevjanik",
+    "email": "daniel.derevjanik@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^1.8.2",
+    "ts-loader": "^0.8.1",
+    "tslint": "^3.5.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "ts-raycasting": "git+https://github.com/dderevjanik/ts-raycasting.git"
+  }
+}
