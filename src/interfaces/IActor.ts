@@ -1,4 +1,4 @@
-import EPlayerState from './../enums/EPlayerState';
+import { EPlayerState } from './../enums/EPlayerState';
 
 export interface IActor {
     x: number;
@@ -9,5 +9,3 @@ export interface IActor {
     speed: number;
     state: EPlayerState;
 };
-
-export default IActor;

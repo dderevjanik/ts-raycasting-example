@@ -12,12 +12,13 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname + '/dist'),
-        publicPath: '/dist/',
+        publicPath: '/dist',
         filename: 'raycast.min.js',
         library: 'raycast',
         libraryTarget: 'var'
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
         new webpack.DefinePlugin({
             'VERSION': JSON.stringify(require('./package.json').version)
         })
@@ -26,7 +27,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts$/,
-                loader: 'ts-loader?configFileName="tsconfig.json"',
+                loader: 'ts-loader?configFileName=tsconfig.json',
                 exclude: ['node_modules', 'dist', 'example'],
                 include: [
                     path.resolve(__dirname, 'src')

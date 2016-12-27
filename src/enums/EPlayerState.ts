@@ -1,7 +1,5 @@
-export enum EPlayerState {
+export const enum EPlayerState {
     STAND,
     MOVE,
     ROTATE
 };
-
-export default EPlayerState;

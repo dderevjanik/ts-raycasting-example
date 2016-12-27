@@ -1,8 +1,6 @@
-export enum EState {
+export const enum EState {
     INIT,
     LOADING,
     RUNNING,
     STOP
 };
-
-export default EState;

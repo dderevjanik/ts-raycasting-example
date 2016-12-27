@@ -1,19 +1,16 @@
-import raycasting from 'ts-raycasting';
-import ILevel from './interfaces/ILevel';
-import EState from './enums/EState';
-import Level01 from './Levels/Level01';
-import Level02 from './Levels/Level02';
-import Level03 from './Levels/Level03';
-import {createActor} from './Actor';
-import Render from './Render';
+import { castRays } from 'ts-raycasting';
+import { EState } from './enums/EState';
+import { Level01 } from './Levels/Level01';
+import { createActor} from './Actor';
+import { renderBackground, renderRays} from './Render';
 
 let state = EState.INIT;
 let currentLevel = Level01;
 
 // first, get elements from DOM
-const canvasEl: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById('canvas');
-const ctx: CanvasRenderingContext2D = canvasEl.getContext('2d');
-const texturesEl: HTMLImageElement = <HTMLImageElement> document.getElementById('textures');
+const canvasEl = document.getElementById('canvas') as HTMLCanvasElement;
+const ctx = canvasEl.getContext('2d') as CanvasRenderingContext2D;
+const texturesEl = document.getElementById('textures') as HTMLImageElement;
 const textureSize = 64;
 
 // set up key events
@@ -65,14 +62,14 @@ const tick = () => {
             }
             break;
     }
-    const rays = raycasting.castRays(currentLevel.map, player.x, player.y, player.rot, (row, column) => {
+    const rays = castRays(currentLevel.map, player.x, player.y, player.rot, (row, column) => {
         if (currentLevel.map[row][column] !== 0) {
             return false;
         }
         return true;
     })
-    Render.renderBackground(ctx, 256, 300);
-    Render.renderRays(texturesEl, textureSize, ctx, 256, 300, currentLevel.map, rays);
+    renderBackground(ctx, 256, 300);
+    renderRays(texturesEl, textureSize, ctx, 256, 300, currentLevel.map, rays);
     clearInputs();
     setTimeout(tick, fps);
 }

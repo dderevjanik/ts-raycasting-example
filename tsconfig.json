@@ -10,6 +10,8 @@
         "outDir": "dist"
     },
     "files": [
-        "src/Main.ts"
+        "src/Actor.ts",
+        "src/Main.ts",
+        "src/Render.ts"
     ]
 }

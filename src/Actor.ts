@@ -1,5 +1,5 @@
-import IActor from './interfaces/IActor';
-import EPlayerState from './enums/EPlayerState';
+import { IActor } from './interfaces/IActor';
+import { EPlayerState } from './enums/EPlayerState';
 
 export const createActor = (x: number = 0, y: number = 0): IActor => ({
     x: x,
@@ -10,5 +10,3 @@ export const createActor = (x: number = 0, y: number = 0): IActor => ({
     speed: 0.5,
     state: EPlayerState.STAND
 });
-
-export default createActor;

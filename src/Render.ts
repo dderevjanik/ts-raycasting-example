@@ -1,4 +1,4 @@
-import IRays from 'ts-raycasting/dist/Interfaces/IRay';
+import { IRay } from 'ts-raycasting/dist/Interfaces';
 
 export const renderBackground = (ctx: CanvasRenderingContext2D, width: number, height: number): void => {
     const half = Math.floor(height/2);
@@ -8,7 +8,7 @@ export const renderBackground = (ctx: CanvasRenderingContext2D, width: number, h
     ctx.fillRect(0, half, width, half);
 };
 
-export const renderRays = (textures: HTMLImageElement, textureSize: number, ctx: CanvasRenderingContext2D, width: number, height: number, map: number[][], rays: IRays[]): void => {
+export const renderRays = (textures: HTMLImageElement, textureSize: number, ctx: CanvasRenderingContext2D, width: number, height: number, map: number[][], rays: IRay[]): void => {
     const half = Math.floor(height/2);
     rays.forEach((ray, index) => {
         const tileId = map[ray.row][ray.column];
@@ -28,9 +28,4 @@ export const renderRays = (textures: HTMLImageElement, textureSize: number, ctx:
             );
         }
     });
-};
-
-export default {
-    renderBackground: renderBackground,
-    renderRays: renderRays
 };

@@ -1,4 +1,4 @@
-import ILevel from './../interfaces/ILevel';
+import { ILevel } from './../interfaces/ILevel';
 
 export const Level01: ILevel = {
     map: [
